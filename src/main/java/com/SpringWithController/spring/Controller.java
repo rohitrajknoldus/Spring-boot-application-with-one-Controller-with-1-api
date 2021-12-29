@@ -20,16 +20,16 @@ public class Controller {
     public String home() {
         return "Hello This is your Controller method";
     }
-
     //get the courses
     @GetMapping("/courses")
-    public List<Courses> getCourses()
-    {
+    public List<Courses> getCourses() {
         String courseId = null;
         return this.coursesService.getCourses(Long.parseLong(courseId));
     }
+    // get course id
     @GetMapping("/courses/{coursesId")
-    public Courses getCourses(@PathVariable String courseId){
-        return (Courses) this.coursesService.getCourses(Long.parseLong(courseId));
+    public Courses getCourses(@PathVariable final String courseId) {
+        return (Courses) this.coursesService.getCourses(
+                Long.parseLong(courseId));
     }
 }
